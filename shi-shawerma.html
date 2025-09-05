@@ -6,29 +6,33 @@
 <title>Shi Shawerma - العروض</title>
 <style>
 body{font-family:sans-serif;background:#111827;color:#e5e7eb;margin:0;padding:0;}
-.wrap{max-width:900px;margin:0 auto;padding:20px;}
-h1{text-align:center;margin-bottom:24px;}
+.wrap{max-width:900px;margin:0 auto;padding:20px;text-align:center;}
+h1{margin-bottom:24px;}
 .card{background:#1f2937;padding:16px;border-radius:12px;margin-bottom:16px;}
 .card img{width:100%;border-radius:12px;margin-bottom:12px;}
-a.btn{display:inline-block;padding:10px 16px;background:#22c55e;color:#062a16;border-radius:12px;text-decoration:none;font-weight:700;margin-top:8px;}
+a.btn{display:inline-block;padding:10px 16px;background:#22c55e;color:#062a16;border-radius:12px;text-decoration:none;font-weight:700;margin:8px;transition:0.2s;}
+a.btn:hover{background:#16a34a;}
+.social{margin-top:16px;text-align:center;}
+.social a{margin:0 8px;}
 </style>
 </head>
 <body>
 <div class="wrap">
 <h1>Shi Shawerma - العروض</h1>
 
-<div class="card">
+<div class="card" id="offer-section">
   <img src="https://images.unsplash.com/photo-1617196039897-9c593c0f12e8?q=80&w=1200&auto=format&fit=crop" alt="عرض Shi Shawerma">
   <div>خصم 15%</div>
-  <a href="https://www.rewards.orange.jo/ar/deals" target="_blank" class="btn">شوف العرض</a>
+  <a href="#offer-section" class="btn">شوف العرض</a>
 </div>
 
-<div style="margin-top:12px;text-align:center;">
-<a href="shi-shawerma-details.html" class="btn">تابعوني على صفحة الوصف</a>
+<div class="social">
+  <a href="https://www.instagram.com/shishawerma" target="_blank" class="btn">Instagram</a>
+  <a href="https://www.facebook.com/shishawerma" target="_blank" class="btn">Facebook</a>
 </div>
 
 <div style="margin-top:20px;text-align:center;">
-<a href="restaurants.html">عودة لقائمة المطاعم</a>
+<a href="restaurants.html" class="btn">⬅ عودة لقائمة المطاعم</a>
 </div>
 </div>
 </body>
