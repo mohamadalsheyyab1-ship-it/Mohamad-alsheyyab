@@ -5,31 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>عروض الأردن</title>
 <style>
-body{font-family:sans-serif;background:#111827;color:#e5e7eb;margin:0;padding:0;}
-.wrap{max-width:900px;margin:0 auto;padding:20px;}
-h1{text-align:center;margin-bottom:24px;}
-button{padding:10px 16px;margin:5px;border-radius:12px;border:none;background:#22c55e;color:#062a16;font-weight:700;cursor:pointer;}
-a{color:#38bdf8;text-decoration:none;}
+body{font-family:sans-serif;background:#111827;color:#e5e7eb;margin:0;padding:0;text-align:center;}
+header{padding:20px;background:#1f2937;}
+h1{margin:0;}
+.search-box{margin:20px auto;max-width:400px;}
+input[type=text]{width:80%;padding:10px;border-radius:8px;border:none;}
+button{padding:10px 16px;margin-top:8px;background:#22c55e;color:#062a16;border:none;border-radius:8px;cursor:pointer;}
+button:hover{background:#16a34a;}
+.menu{margin-top:20px;}
+a.btn{display:inline-block;padding:10px 16px;background:#2563eb;color:#fff;border-radius:8px;text-decoration:none;margin:5px;}
+a.btn:hover{background:#1d4ed8;}
 </style>
 </head>
 <body>
-<div class="wrap">
-<h1>عروض الأردن</h1>
-<!-- أزرار البحث والمشاركة -->
-<input type="text" id="search" placeholder="دوّر على عرض أو متجر..." style="width:100%;padding:12px;border-radius:12px;margin-bottom:12px;border:1px solid #1f2937;background:#0b1220;color:#e5e7eb;">
-<button id="searchBtn">ابحث</button>
-<button id="shareBtn">مشاركة البحث</button>
+<header>
+  <h1>مرحبا في موقع عروض الأردن</h1>
+</header>
 
-<!-- رابط صفحة المطاعم -->
-<div style="margin-top:20px;">
-<a href="restaurants.html">اذهب لقائمة المطاعم</a>
-</div>
+<div class="search-box">
+  <input type="text" placeholder="ابحث عن عرض...">
+  <button onclick="alert('البحث غير مفعل حاليا')">بحث</button>
 </div>
 
-<script>
-document.getElementById('shareBtn').onclick = function(){
-  alert("رابط البحث تم نسخه!");
-};
-</script>
+<div class="menu">
+  <a href="restaurants.html" class="btn">اذهب إلى قائمة المطاعم</a>
+</div>
+
 </body>
 </html>
