@@ -3,91 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عروض الأردن</title>
+<title>عروض الأردن - المطاعم</title>
 <style>
-:root{
-  --bg:#0f172a; --card:#111827; --muted:#94a3b8; --text:#e5e7eb; 
-  --accent:#22c55e; --chip:#1f2937; --chip-active:#065f46; --link:#38bdf8;
-  --shadow:0 10px 25px rgba(0,0,0,.35); --radius:16px;
-}
-*{box-sizing:border-box}
-html,body{background:linear-gradient(145deg,#0b1224,#111827);margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial;color:var(--text)}
-a{color:var(--link);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:1100px;margin:0 auto;padding:18px}
-header{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:14px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%, #22c55e, #0ea5e9);box-shadow:var(--shadow);font-weight:800}
-.logo span{filter:brightness(1.2);}
-h1{font-size:22px;margin:0}
-.muted{color:var(--muted)}
-.searchbar{display:flex;gap:8px;flex:1;min-width:260px}
-.searchbar input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid #1f2937;background:#0b1220;color:var(--text);outline:none}
-.searchbar button{padding:12px 14px;border-radius:12px;border:0;background:var(--accent);color:#062a16;font-weight:700;cursor:pointer}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
-.chip{padding:8px 12px;border-radius:999px;background:var(--chip);border:1px solid #233046;cursor:pointer;font-size:14px}
-.chip.active{background:var(--chip-active);border-color:#0f766e}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-@media (max-width:1200px){.grid{grid-template-columns:repeat(8,1fr)}}
-@media (max-width:800px){.grid{grid-template-columns:repeat(4,1fr)}}
-@media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
-.card{grid-column:span 3;background:linear-gradient(180deg,#0b1324,#0f1b32);border:1px solid #1f2a44;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
-.thumb{position:relative;aspect-ratio:16/9;background:#0a0f1f;overflow:hidden}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
-.card:hover .thumb img{transform:scale(1.03)}
-.badge{position:absolute;top:10px;left:10px;background:rgba(6, 95, 70,.9);border:1px solid #0d9488;color:#e7fff9;padding:4px 8px;border-radius:999px;font-size:12px}
-.content{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
-.title{font-weight:700;line-height:1.35}
-.shop{font-size:13px;color:var(--muted)}
-.tags{display:flex;gap:6px;flex-wrap:wrap}
-.tag{font-size:12px;border:1px dashed #2a3a5a;padding:2px 8px;border-radius:999px;color:#cfe7ff}
-.actions{display:flex;gap:8px;margin-top:auto;padding:12px 14px}
-.btn{flex:1;text-align:center;padding:10px 12px;border-radius:12px;border:1px solid #1d2a45;background:#0b1220;color:var(--text);cursor:pointer}
-.btn.primary{background:var(--accent);border-color:#166534;color:#052a15;font-weight:800}
-footer{margin:28px 0 12px;text-align:center;color:var(--muted);font-size:13px}
-.empty{padding:28px;border:1px dashed #334155;border-radius:16px;text-align:center;color:var(--muted);background:#0b1220}
-.toast{position:fixed;bottom:18px;right:18px;background:#0b1220;border:1px solid #1f2a44;color:var(--text);padding:12px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s}
-.toast.show{opacity:1;transform:translateY(0)}
+body{font-family:sans-serif;background:#111827;color:#e5e7eb;margin:0;padding:0;}
+.wrap{max-width:900px;margin:0 auto;padding:20px;}
+h1{text-align:center;margin-bottom:24px;}
+ul{list-style:none;padding:0;}
+li{margin:12px 0;padding:12px 16px;background:#1f2937;border-radius:12px;transition:0.2s;}
+li:hover{background:#065f46;cursor:pointer;}
+a{color:#e5e7eb;text-decoration:none;font-weight:700;}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header>
-<div class="brand">
-<div class="logo"><span>٪</span></div>
-<div>
-<h1>عروض الأردن</h1>
-<div class="muted">تجميع أحدث الخصومات من المتاجر الأردنية</div>
+<h1>قائمة المطاعم</h1>
+<ul>
+  <li><a href="papaya.html">مطعم بابايا</a></li>
+  <li><a href="cafe-barbera.html">Cafe Barbera</a></li>
+  <li><a href="talabat.html">Talabat الأردن</a></li>
+  <li><a href="shi-shawerma.html">Shi Shawerma</a></li>
+  <li><a href="tom-jerry.html">Tom & Jerry</a></li>
+</ul>
 </div>
-</div>
-<div class="searchbar">
-<input id="q" type="search" placeholder="دوّر على عرض أو متجر..." />
-<button id="copyLink">مشاركة البحث</button>
-</div>
-</header>
-
-<div class="chips" id="chips">
-<button class="chip active" data-cat="الكل">الكل</button>
-<button class="chip" data-cat="مطاعم">مطاعم</button>
-<button class="chip" data-cat="سوبرماركت">سوبرماركت</button>
-<button class="chip" data-cat="ملابس">ملابس</button>
-<button class="chip" data-cat="الكترونيات">الكترونيات</button>
-<button class="chip" data-cat="حلويات">حلويات</button>
-<button class="chip" data-cat="أخرى">أخرى</button>
-</div>
-
-<div id="grid" class="grid"></div>
-<div id="empty" class="empty" style="display:none">ما في نتائج حسب بحثك حالياً.</div>
-<footer>© <span id="year"></span> عروض الأردن — نسخة تجريبية</footer>
-</div>
-
-<div class="toast" id="toast">تم نسخ رابط البحث ✅</div>
-
-<script>
-const deals = [
-  // مطاعم
-  {id:"papaya", shop:"مطعم بابايا", title:"خصم 20%", img:"https://images.unsplash.com/photo-1600891963932-05c0d1f1b1f0?q=80&w=1200&auto=format&fit=crop", url:"https://www.rewards.orange.jo/ar/deals", category:"مطاعم", tags:["مطاعم","خصم","عمان"], source:"Orange Deals"},
-  {id:"cafe-barbera", shop:"Cafe Barbera", title:"اشتري 1 واحصل على الثاني مجانًا", img:"https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&auto=format&fit=crop", url:"https://www.rewards.orange.jo/ar/deals", category:"مطاعم", tags:["قهوة","مشروبات","عروض"], source:"Orange Deals"},
-  {id:"talabat", shop:"Talabat الأردن", title:"عروض يومية من طلبات", img:"https://images.unsplash.com/photo-1598514982655-cf5f0c6e36ef?q=80&w=1200&auto=format&fit=crop", url:"https://www.talabat.com/ar/jordan/offers", category:"مطاعم", tags:["توصيل","مطاعم","عروض"], source:"Talabat"},
-  {id:"shi-shawerma", shop:"Shi Shawerma", title:"خصم 15%", img:"https://images.unsplash.com/photo-1617196039897-9c593c0f12e8?q=80&w=1200&auto=format&fit=crop", url:"https://www.rewards.orange.jo/ar/deals", category:"مطاعم", tags:["شاورما","سندويشات","خصم"], source:"Orange Deals"},
-  {id:"tom-jerry", shop:"Tom & Jerry", title:"خصم 15%", img:"https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1200&auto=format&fit=crop", url:"https
+</body>
+</html>
