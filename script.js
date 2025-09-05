@@ -1,74 +1,38 @@
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
+const deals = [
+  // هنا ضيف كل العروض اللي جمعناها
+  {
+    id:"planet-donuts",
+    shop:"Planet Donuts",
+    title:"عرض بوكس 12 قطعة بسعر خاص",
+    img:"https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1200&auto=format&fit=crop",
+    url:"https://planetdonuts.com/home/dashboard",
+    category:"حلويات",
+    tags:["حلويات","دونتس","عمّان"],
+    source:"الموقع الرسمي"
+  },
+  // … ضيف باقي العروض هنا بنفس البنية
+];
 
-const player = { x: 50, y: 250, width: 40, height: 40, dy: 0 };
-const obstacles = [];
-let score = 0;
-let gameOver = false;
+const grid = document.getElementById('grid');
+const empty = document.getElementById('empty');
+const queryInput = document.getElementById('q');
+const chips = document.getElementById('chips');
+const toast = document.getElementById('toast');
+const copyBtn = document.getElementById('copyLink');
+document.getElementById('year').textContent = new Date().getFullYear();
 
-canvas.addEventListener('touchstart', (e) => {
-  const touch = e.touches[0];
-  if(touch.clientY < canvas.height / 2) player.dy = -5;
-  else player.dy = 5;
-});
-
-canvas.addEventListener('touchend', () => {
-  player.dy = 0;
-});
-
-function createObstacle() {
-  const height = Math.random() * 100 + 20;
-  const y = Math.random() * (canvas.height - height);
-  obstacles.push({ x: canvas.width, y: y, width: 20, height: height });
-}
-
-function update() {
-  if(gameOver) return;
-
-  player.y += player.dy;
-  if(player.y < 0) player.y = 0;
-  if(player.y + player.height > canvas.height) player.y = canvas.height - player.height;
-
-  for(let i = 0; i < obstacles.length; i++) {
-    obstacles[i].x -= 5;
-
-    if(obstacles[i].x + obstacles[i].width > player.x &&
-       obstacles[i].x < player.x + player.width &&
-       obstacles[i].y + obstacles[i].height > player.y &&
-       obstacles[i].y < player.y + player.height) {
-      gameOver = true;
-    }
-  }
-
-  if(Math.random() < 0.02) createObstacle();
-
-  score += 1;
-}
-
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = 'red';
-  ctx.fillRect(player.x, player.y, player.width, player.height);
-
-  ctx.fillStyle = 'green';
-  obstacles.forEach(obs => ctx.fillRect(obs.x, obs.y, obs.width, obs.height));
-
-  ctx.fillStyle = 'black';
-  ctx.font = '20px Arial';
-  ctx.fillText('Score: ' + score, 10, 30);
-
-  if(gameOver){
-    ctx.fillStyle = 'black';
-    ctx.font = '40px Arial';
-    ctx.fillText('Game Over', 100, 300);
-  }
-}
-
-function gameLoop() {
-  update();
-  draw();
-  requestAnimationFrame(gameLoop);
-}
-
-gameLoop();
+function makeCard(d){
+  const el = document.createElement('article');
+  el.className = 'card';
+  el.dataset.cat = d.category;
+  el.dataset.text = (d.shop + ' ' + d.title + ' ' + d.tags.join(' ')).toLowerCase();
+  el.innerHTML = `
+    <div class="thumb">
+      <img alt="صورة ${d.shop}" loading="lazy" src="${d.img}"/>
+      <div class="badge">${d.category}</div>
+    </div>
+    <div class="content">
+      <div class="title">${d.title}</div>
+      <div class="shop">المتجر: ${d.shop} • المصدر: ${d.source}</div>
+      <div class="tags">
+        ${
