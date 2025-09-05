@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عروض الأردن</title>
-<style>
-body{font-family:sans-serif;background:#111827;color:#e5e7eb;margin:0;padding:0;text-align:center;}
-header{padding:20px;background:#1f2937;}
-h1{margin:0;}
-.search-box{margin:20px auto;max-width:400px;}
-input[type=text]{width:80%;padding:10px;border-radius:8px;border:none;}
-button{padding:10px 16px;margin-top:8px;background:#22c55e;color:#062a16;border:none;border-radius:8px;cursor:pointer;}
-button:hover{background:#16a34a;}
-.menu{margin-top:20px;}
-a.btn{display:inline-block;padding:10px 16px;background:#2563eb;color:#fff;border-radius:8px;text-decoration:none;margin:5px;}
-a.btn:hover{background:#1d4ed8;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عروض الأردن</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
   <h1>مرحبا في موقع عروض الأردن</h1>
 </header>
 
-<div class="search-box">
-  <input type="text" placeholder="ابحث عن عرض...">
-  <button onclick="alert('البحث غير مفعل حاليا')">بحث</button>
+<div id="content">
+  <!-- الصفحة الرئيسية -->
+  <div id="home">
+    <a href="#" class="menu-btn" onclick="showPage('list')">اذهب إلى قائمة المطاعم</a>
+  </div>
+
+  <!-- قائمة المطاعم -->
+  <div id="list" class="hidden"></div>
+
+  <!-- صفحة المطعم -->
+  <div id="restaurant" class="hidden"></div>
 </div>
 
-<div class="menu">
-  <a href="restaurants.html" class="btn">اذهب إلى قائمة المطاعم</a>
-</div>
-
+<script src="script.js"></script>
 </body>
 </html>
