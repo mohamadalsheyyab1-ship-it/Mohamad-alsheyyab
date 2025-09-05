@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عروض الأردن</title>
+<style>
+body{font-family:sans-serif;background:#111827;color:#e5e7eb;margin:0;padding:0;text-align:center;}
+header{padding:20px;background:#1f2937;}
+h1{margin:0;}
+.wrap{max-width:900px;margin:0 auto;padding:20px;text-align:center;}
+.card{background:#1f2937;padding:16px;border-radius:12px;margin:16px;display:inline-block;width:250px;vertical-align:top;color:#fff;text-decoration:none;}
+.card img{width:100%;border-radius:12px;margin-bottom:12px;}
+a.btn{display:inline-block;padding:8px 12px;background:#22c55e;color:#062a16;border-radius:12px;text-decoration:none;margin:4px;}
+a.btn:hover{background:#16a34a;}
+a.menu-btn{display:block;width:200px;margin:8px auto;padding:10px;background:#2563eb;color:#fff;border-radius:12px;text-decoration:none;font-weight:bold;}
+a.menu-btn:hover{background:#1d4ed8;}
+#content{padding:20px;}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>مرحبا في موقع عروض الأردن</h1>
+</header>
+
+<div id="content">
+
+<!-- الصفحة الرئيسية -->
+<div id="home">
+  <a href="#" class="menu-btn" onclick="showPage('list')">اذهب إلى قائمة المطاعم</a>
+</div>
+
+<!-- قائمة المطاعم -->
+<div id="list" class="hidden"></div>
+
+<!-- صفحة المطعم -->
+<div id="restaurant" class="hidden"></div>
+
+</div>
+
+<script>
+// بيانات العروض مدموجة في الكود
+const offers = [
+  {
+    "name": "Cafe Barbera",
+    "offer": "اشتري 1 واحصل على الثاني مجانًا",
+    "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&auto=format&fit=crop",
+    "insta": "https://www.instagram.com/cafebarbera",
+    "fb": "https://www.facebook.com/cafebarbera"
+  },
+  {
+    "name": "Talabat",
+    "offer": "عروض يومية من طلبات",
+    "image": "https://images.unsplash.com/photo-1598514982655-cf5f0c6e36ef?q=80&w=1200&auto=format&fit=crop",
+    "insta": "https://www.instagram.com/talabat",
+    "fb": "https://www.facebook.com/talabat"
+  },
+  {
+    "name": "Shi Shawerma",
+    "offer": "خصم 15%",
+    "image": "https://images.unsplash.com/photo-1617196039897-9c593c0f12e8?q=80&w=1200&auto=format&fit=crop",
+    "insta": "https://www.instagram.com/shishawerma",
+    "fb": "https://www.facebook.com/shishawerma"
+  },
+  {
+    "name": "Tom & Jerry",
+    "offer": "خصم 15%",
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1200&auto=format&fit=crop",
+    "insta": "https://www.instagram.com/tomandjerry",
+    "fb": "https://www.facebook.com/tomandjerry"
+  },
+  {
+    "name": "Papaya",
+    "offer": "عرض خاص على العصائر الطبيعية",
+    "image": "https://images.unsplash.com/photo-1565958011703-44e58cc2c9f7?q=80&w=1200&auto=format&fit=crop",
+    "insta": "https://www.instagram.com/papaya",
+    "fb": "https://www.facebook.com/papaya"
+  }
+];
+
+// عناصر DOM
+const homeDiv = document.getElementById('home');
+const listDiv = document.getElementById('list');
+const restaurantDiv = document.getElementById('restaurant');
+
+// عرض صفحة معينة
+function showPage(page, index=null){
+  homeDiv.classList.add('hidden');
+  listDiv.classList.add('hidden');
+  restaurantDiv.classList.add('hidden');
+
+  if(page==='home') homeDiv.classList.remove('hidden');
+  if(page==='list') renderList();
+  if(page==='restaurant') renderRestaurant(index);
+}
+
+// عرض قائمة المطاعم
+function renderList(){
+  listDiv.innerHTML = '<h1>قائمة المطاعم</h1>';
+  offers.forEach((item, index)=>{
+    const link = document.createElement('a');
+    link.href = '#';
+    link.className = 'card';
+    link.textContent = item.name;
+    link.onclick = ()=>{ showPage('restaurant', index); };
+    listDiv.appendChild(link);
+  });
+  const back = document.createElement('a');
+  back.href = '#';
+  back.className = 'menu-btn';
+  back.textContent = '⬅ العودة للصفحة الرئيسية';
+  back.onclick = ()=>{ showPage('home'); };
+  listDiv.appendChild(back);
+
+  listDiv.classList.remove('hidden');
+}
+
+// عرض صفحة مطعم
+function renderRestaurant(index){
+  const item = offers[index];
+  restaurantDiv.innerHTML = `
+    <div class="card">
+      <img src="${item.image}" alt="${item.name}">
+      <h1>${item.name}</h1>
+      <p>${item.offer}</p>
+      <div style="margin-top:8px;">
+        <a href="${item.insta}" target="_blank" class="btn">Instagram</a>
+        <a href="${item.fb}" target="_blank" class="btn">Facebook</a>
+      </div>
+    </div>
+    <a href="#" class="menu-btn" onclick="showPage('list')">⬅ العودة لقائمة المطاعم</a>
+    <a href="#" class="menu-btn" onclick="showPage('home')">⬅ العودة للصفحة الرئيسية</a>
+  `;
+  restaurantDiv.classList.remove('hidden');
+}
+
+// البداية على الصفحة الرئيسية
+showPage('home');
+</script>
+
+</body>
+</html>
