@@ -3,27 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عروض الأردن - المطاعم</title>
+<title>عروض الأردن</title>
 <style>
 body{font-family:sans-serif;background:#111827;color:#e5e7eb;margin:0;padding:0;}
 .wrap{max-width:900px;margin:0 auto;padding:20px;}
 h1{text-align:center;margin-bottom:24px;}
-ul{list-style:none;padding:0;}
-li{margin:12px 0;padding:12px 16px;background:#1f2937;border-radius:12px;transition:0.2s;}
-li:hover{background:#065f46;cursor:pointer;}
-a{color:#e5e7eb;text-decoration:none;font-weight:700;}
+button{padding:10px 16px;margin:5px;border-radius:12px;border:none;background:#22c55e;color:#062a16;font-weight:700;cursor:pointer;}
+a{color:#38bdf8;text-decoration:none;}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>قائمة المطاعم</h1>
-<ul>
-  <li><a href="papaya.html">مطعم بابايا</a></li>
-  <li><a href="cafe-barbera.html">Cafe Barbera</a></li>
-  <li><a href="talabat.html">Talabat الأردن</a></li>
-  <li><a href="shi-shawerma.html">Shi Shawerma</a></li>
-  <li><a href="tom-jerry.html">Tom & Jerry</a></li>
-</ul>
+<h1>عروض الأردن</h1>
+
+<!-- أزرار البحث والمشاركة -->
+<input type="text" id="search" placeholder="دوّر على عرض أو متجر..." style="width:100%;padding:12px;border-radius:12px;margin-bottom:12px;border:1px solid #1f2937;background:#0b1220;color:#e5e7eb;">
+<button id="searchBtn">ابحث</button>
+<button id="shareBtn">مشاركة البحث</button>
+
+<!-- رابط صفحة المطاعم -->
+<div style="margin-top:20px;">
+<a href="restaurants.html">اذهب لقائمة المطاعم</a>
 </div>
+</div>
+
+<script>
+document.getElementById('shareBtn').onclick = function(){
+  alert("رابط البحث تم نسخه!");
+};
+</script>
 </body>
 </html>
