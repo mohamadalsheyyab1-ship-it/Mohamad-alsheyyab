@@ -7,19 +7,17 @@
   --chip:#1f2937;
   --chip-active:#065f46;
   --link:#38bdf8;
-  --danger:#ef4444;
-  --ok:#10b981;
   --shadow: 0 10px 25px rgba(0,0,0,.35);
   --radius:16px;
 }
 *{box-sizing:border-box}
-html,body{background:linear-gradient(145deg,#0b1224,#111827);margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial; color:var(--text)}
-a{color:var(--link); text-decoration:none}
+html,body{background:linear-gradient(145deg,#0b1224,#111827);margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial;color:var(--text)}
+a{color:var(--link);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1100px;margin:0 auto;padding:18px}
 header{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:14px}
 .brand{display:flex;align-items:center;gap:12px}
-.logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%, #22c55e, #0ea5e9);box-shadow:var(--shadow); font-weight:800}
+.logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%, #22c55e, #0ea5e9);box-shadow:var(--shadow);font-weight:800}
 .logo span{filter:brightness(1.2);}
 h1{font-size:22px;margin:0}
 .muted{color:var(--muted)}
@@ -33,7 +31,7 @@ h1{font-size:22px;margin:0}
 @media (max-width:1200px){.grid{grid-template-columns:repeat(8,1fr)}}
 @media (max-width:800px){.grid{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
-.card{grid-column:span 3;background:linear-gradient(180deg,#0b1324,#0f1b32); border:1px solid #1f2a44;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card{grid-column:span 3;background:linear-gradient(180deg,#0b1324,#0f1b32);border:1px solid #1f2a44;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
 .thumb{position:relative;aspect-ratio:16/9;background:#0a0f1f;overflow:hidden}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
 .card:hover .thumb img{transform:scale(1.03)}
