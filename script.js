@@ -1,16 +1,35 @@
 const deals = [
-  // هنا ضيف كل العروض اللي جمعناها
   {
-    id:"planet-donuts",
-    shop:"Planet Donuts",
-    title:"عرض بوكس 12 قطعة بسعر خاص",
-    img:"https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1200&auto=format&fit=crop",
-    url:"https://planetdonuts.com/home/dashboard",
-    category:"حلويات",
-    tags:["حلويات","دونتس","عمّان"],
-    source:"الموقع الرسمي"
+    id:"papaya",
+    shop:"مطعم بابايا",
+    title:"خصم 20%",
+    img:"https://images.unsplash.com/photo-1600891963932-05c0d1f1b1f0?q=80&w=1200&auto=format&fit=crop",
+    url:"https://www.rewards.orange.jo/ar/deals",
+    category:"مطاعم",
+    tags:["مطاعم","خصم","عمان"],
+    source:"Orange Deals"
   },
-  // … ضيف باقي العروض هنا بنفس البنية
+  {
+    id:"cafe-barbera",
+    shop:"Cafe Barbera",
+    title:"اشتري 1 واحصل على الثاني مجانًا",
+    img:"https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&auto=format&fit=crop",
+    url:"https://www.rewards.orange.jo/ar/deals",
+    category:"مطاعم",
+    tags:["قهوة","مشروبات","عروض"],
+    source:"Orange Deals"
+  },
+  {
+    id:"ikooz-jordan",
+    shop:"محل @ikooz.jordan (الجبيهة)",
+    title:"تنزيلات من نصف دينار إلى 3 دنانير",
+    img:"https://images.unsplash.com/photo-1585238342028-5d0d35d81614?q=80&w=1200&auto=format&fit=crop",
+    url:"https://www.instagram.com/reel/DJGHUr1ChQZ",
+    category:"أخرى",
+    tags:["تنزيلات","خصومات","الجبيهة"],
+    source:"Instagram"
+  }
+  // أضف باقي العروض بنفس البنية
 ];
 
 const grid = document.getElementById('grid');
@@ -35,4 +54,5 @@ function makeCard(d){
       <div class="title">${d.title}</div>
       <div class="shop">المتجر: ${d.shop} • المصدر: ${d.source}</div>
       <div class="tags">
-        ${
+        ${d.tags.map(t=>`<span class="tag">${t}</span>`).join('')}
+      </
