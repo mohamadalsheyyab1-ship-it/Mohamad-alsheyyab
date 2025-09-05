@@ -1,14 +1,45 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لعبة سبواي على الموبايل </title>
-<meta name="description" content="لعبة سبواي بسيطة للموبايل، العب وجمع النقاط وتجنب العقبات!">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>عروض الأردن</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="gameCanvas" width="400" height="600"></canvas>
-<script src="script.js"></script>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"><span>٪</span></div>
+        <div>
+          <h1>عروض الأردن</h1>
+          <div class="muted">تجميع أحدث الخصومات من المتاجر الأردنية</div>
+        </div>
+      </div>
+      <div class="searchbar">
+        <input id="q" type="search" placeholder="دوّر على عرض أو متجر..." />
+        <button id="copyLink">مشاركة البحث</button>
+      </div>
+    </header>
+
+    <div class="chips" id="chips">
+      <button class="chip active" data-cat="الكل">الكل</button>
+      <button class="chip" data-cat="مطاعم">مطاعم</button>
+      <button class="chip" data-cat="سوبرماركت">سوبرماركت</button>
+      <button class="chip" data-cat="ملابس">ملابس</button>
+      <button class="chip" data-cat="الكترونيات">الكترونيات</button>
+      <button class="chip" data-cat="حلويات">حلويات</button>
+      <button class="chip" data-cat="أخرى">أخرى</button>
+    </div>
+
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty" style="display:none">ما في نتائج حسب بحثك حالياً.</div>
+
+    <footer>© <span id="year"></span> عروض الأردن — نسخة أولية تجريبية</footer>
+  </div>
+
+  <div class="toast" id="toast">تم نسخ رابط البحث ✅</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
